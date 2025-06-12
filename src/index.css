@@ -1,0 +1,43 @@
+@import url("https://fonts.cdnfonts.com/css/general-sans");
+@import "tailwindcss";
+
+body {
+  width: 100dvw;
+  overflow-x: hidden;
+  background-color: #121212;
+  font-family: "General Sans", sans-serif;
+}
+
+@font-face {
+  font-family: "general";
+  src: url("/fonts/general.woff2") format("woff2");
+}
+
+.nav-hover-btn {
+  @apply relative ml-10 text-xs uppercase text-white cursor-pointer;
+  font-family: "General Sans", sans-serif;
+}
+
+.nav-hover-btn::after {
+  content: "";
+  position: absolute;
+  bottom: -0.125rem; 
+  left: 0;
+  height: 2px;
+  width: 100%;
+  transform-origin: bottom right;
+  transform: scaleX(0);
+  background-color: #d4dae3; 
+  transition: transform 300ms cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+.nav-hover-btn:hover::after {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+.dark .nav-hover-btn::after {
+  background-color: #ffffff; 
+}
+
+.floating-nav {
+  @apply bg-black rounded-lg border;
+}
